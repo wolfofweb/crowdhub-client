@@ -2,6 +2,6 @@ import axios from "axios"
 
 
 export const makeRequest = axios.create({
-    baseURL: "http://localhost:8800/api/",
+    baseURL: "https://crowdhub-api-production.up.railway.app/api/",
     withCredentials: true
 })
