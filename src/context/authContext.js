@@ -10,7 +10,7 @@ export const AuthContextProvider = ({ children }) => {
 
     //GETTING ACCOUNT DETAILS FROM JWT TOKEN ON SUCCESSFUL LOGIN
     const login = async (inputs) => {
-        const res = await axios.post("http://localhost:8800/api/auth/login", inputs, { withCredentials: true })
+        const res = await axios.post("https://crowdhub-api-production.up.railway.app/api/auth/login", inputs, { withCredentials: true })
         //Set the userdata state from login generated cookie data
         setCurrentUser(res.data)
     };
