@@ -57,7 +57,7 @@ const Register = () => {
 
   const validated = async () => {
     try {
-      await axios.post("http://localhost:8800/api/auth/register", inputs);
+      await axios.post("https://crowdhub-api-production.up.railway.app/api/auth/register", inputs);
       navigate("/login");
     } catch (err) {
       setErr(err.response.data);
