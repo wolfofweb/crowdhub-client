@@ -1,0 +1,212 @@
+@import "../../style.scss";
+
+.navBar {
+  @include themify($themes) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    height: 50px;
+    border-bottom: 1px solid themed("border");
+    position: sticky;
+    top: 0;
+    background-color: themed("bg");
+    color: themed("textColor");
+    z-index: 999;
+    svg {
+      font-size: 1.4rem;
+    }
+    /* Position and sizing of burger button */
+    .bm-burger-button {
+      position: fixed;
+      width: 1rem;
+      height: 1rem;
+      left: 30px;
+      top: 28px;
+    }
+
+    /* Color/shape of burger icon bars */
+    .bm-burger-bars {
+      background: themed("textColor");
+    }
+
+    /* Color/shape of burger icon bars on hover*/
+    .bm-burger-bars-hover {
+      background: #a90000;
+    }
+
+    /* Position and sizing of clickable cross button */
+    .bm-cross-button {
+      height: 1.5rem;
+      width: 1.5rem;
+    }
+
+    /* Color/shape of close button cross */
+    .bm-cross {
+      background: #bdc3c7;
+    }
+
+    /*
+  Sidebar wrapper styles
+  Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+  */
+    .bm-menu-wrap {
+      position: fixed;
+      height: 100%;
+    }
+
+    /* General sidebar styles */
+    .bm-menu {
+      background: themed("bg");
+      padding: 2.5em 4em;
+      font-size: 1rem;
+      margin-left: -35%;
+      overflow-x: hidden;
+      font-weight: 400;
+    }
+
+    /* Morph shape necessary with bubble or elastic */
+    .bm-morph-shape {
+      fill: #373a47;
+    }
+
+    /* Wrapper for item list */
+    .bm-item-list {
+      color: #b8b7ad;
+      padding: 0.8em;
+    }
+
+    /* Styling of overlay */
+    .bm-overlay {
+      background: #147508;
+    }
+
+    /* Individual item */
+    .bm-item {
+      display: inline-block;
+      color: #d1d1d1;
+      margin-bottom: 1rem;
+      text-align: left;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .bm-item:hover {
+      color: #ffffff;
+    }
+    .left {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      position: relative;
+      #mobileIcons {
+        display: none;
+        @include mobile {
+          display: flex;
+          gap: 20px;
+          margin-left: 2rem;
+        }
+        svg {
+          display: block;
+        }
+      }
+      span {
+        font-weight: bold;
+        color: themed("logo");
+        font-size: 1.5rem;
+        text-align: right;
+      }
+      svg {
+        @include mobile {
+          display: none;
+          margin-left: auto;
+        }
+      }
+      .mobileSearch {
+        position: absolute;
+        top: 50px;
+      }
+      .search {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid themed("border");
+        border-radius: 5px;
+        padding: 5px;
+        svg {
+          @include mobile {
+            display: block;
+          }
+        }
+        input {
+          border: none;
+          width: 500px;
+          background-color: transparent;
+          color: themed("textColor");
+
+          @include mobile {
+            display: none;
+          }
+          @include tablet {
+            width: 200px;
+          }
+        }
+      }
+      .mobileSearch {
+        display: none;
+        border: 1px solid themed("border");
+        border-radius: 20px;
+        background-color: themed("bg");
+        width: 90vw;
+
+        input {
+          border: none;
+          width: 85%;
+          background-color: transparent;
+          color: themed("textColor");
+          padding: 10px;
+        }
+        button {
+          color: themed("textColor");
+          background-color: transparent;
+          border: none;
+        }
+        @include mobile {
+          display: block;
+        }
+      }
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      @include mobile {
+        display: none;
+      }
+
+      .user {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 500;
+
+        @include tablet {
+          display: none;
+        }
+
+        img {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          object-fit: cover;
+          cursor: pointer;
+        }
+        span {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
