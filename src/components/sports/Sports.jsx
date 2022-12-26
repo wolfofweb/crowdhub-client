@@ -40,14 +40,13 @@ const Sports = () => {
     return axios('https://api.currentsapi.services/v1/search?' +
             'keywords=sports&language=en&' + 
             'apiKey=sRm4uU7AOS5nIyJilHwoxsoKCkbbDRsfRMI2KZWLwqbjAVK0', {
-      method: 'GET',
+      method: 'GET'||'POST',
        headers: {
         'Access-Control-Allow-Origin': 'https://crowdhub.netlify.app',
         'Content-Type': 'application/json',
       },
-      mode: 'no-cors',
+      mode: 'cors',
       withCredentials: true,
-      credentials: 'same-origin',
     }).then(response => {
       let data= response.json();
       console.log(data)
