@@ -25,9 +25,9 @@ const apiKey = "sRm4uU7AOS5nIyJilHwoxsoKCkbbDRsfRMI2KZWLwqbjAVK0";
 const url = `${proxyUrl}https://api.currentsapi.services/v1/search?keywords=${qInTitle}&language=en&apiKey=${apiKey}`;
 const request = new Request(url);
 fetch(request)
-  .then(response =>
+  .then(response =>{
         console.log(response);
-        response.json())
+        response.json()})
   .then((data) => {
     console.log(data);
    setNews(data.news);
