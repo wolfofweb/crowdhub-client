@@ -23,6 +23,10 @@ const Sports = () => {
             'keywords=sports&language=en&' + 
             'apiKey=sRm4uU7AOS5nIyJilHwoxsoKCkbbDRsfRMI2KZWLwqbjAVK0', {
       method: 'GET',
+       headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json',
+      },
       mode: 'no-cors',
       withCredentials: true,
       credentials: 'same-origin',
