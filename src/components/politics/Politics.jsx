@@ -8,13 +8,13 @@ const Politics = () => {
   useEffect(() => {
     getData();
   }, []);
-  let getData = async () => {
-    let res = await fetch(
-      `https://newsapi.org/v2/everything?q=politics&sortBy=popularity?country=in&apiKey=a54a083a384e4e2fa8a09733da5a3c38`
-    );
+ let getData = async () => {
+    let res = await fetch('https://api.currentsapi.services/v1/search?' +
+            'keywords=politics&language=en&' + 
+            'apiKey=sRm4uU7AOS5nIyJilHwoxsoKCkbbDRsfRMI2KZWLwqbjAVK0');
     let data = await res.json();
     console.log(data);
-    setNews(data.articles);
+    setNews(data.news);
   };
   return (
     <div className="news">
