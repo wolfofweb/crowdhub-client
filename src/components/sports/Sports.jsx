@@ -35,7 +35,7 @@ const Sports = () => {
 //   .catch(error => {
 //     console.log(error);
 //   });
-    }
+//     }
     let getData=()=>{
     return axios('https://api.currentsapi.services/v1/search?' +
             'keywords=sports&language=en&' + 
