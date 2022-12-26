@@ -8,14 +8,31 @@ const Sports = () => {
   useEffect(() => {
     getData();
   }, []);
-  let getData = async () => {
-    let res = await fetch(
-      `https://newsapi.org/v2/everything?q=sports&sortBy=popularity?country=in&apiKey=a54a083a384e4e2fa8a09733da5a3c38`
-    );
-    let data = await res.json();
-    console.log(data);
-    setNews(data.articles);
-  };
+//   let getData = async () => {
+//     let res = await fetch(
+//       `https://newsapi.org/v2/everything?q=sports&sortBy=popularity?country=in&apiKey=a54a083a384e4e2fa8a09733da5a3c38`
+//     );
+//     let data = await res.json();
+//     console.log(data);
+//     setNews(data.articles);
+//   };
+   let getData=async()=>{
+    return axios( `https://newsapi.org/v2/everything?q=sports&sortBy=popularity?country=in&apiKey=a54a083a384e4e2fa8a09733da5a3c38`, {
+      method: 'GET',
+      mode: 'no-cors',
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json',
+      },
+      withCredentials: true,
+      credentials: 'same-origin',
+    }).then(response => {
+      let data=await response.json();
+      console.log(data)
+      setNews(data.articles);
+    })
+
+  }
   return (
     <div className="news">
       <h2>All about Sports</h2>
