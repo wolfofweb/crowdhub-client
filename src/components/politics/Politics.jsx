@@ -23,12 +23,10 @@ const Politics = () => {
         <div className="post" key={article.url}>
           <div className="container">
             <div className="details">
-
               <span className="name">
                 Author: {article.author ? article.author : "Unknown Author"}
               </span>
             </div>
-
             <div className="content">
               <p>{article.title}</p>
               <p>{article.description}</p>
