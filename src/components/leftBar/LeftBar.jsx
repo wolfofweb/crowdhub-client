@@ -78,7 +78,7 @@ const LeftBar = () => {
           </div>
           <div className="item" onClick={() => navigate("/news/politics")}>
             <img src={Groups} alt="" />
-            <span>Politics</span>
+            <span>Entertainment</span>
           </div>
         </div>
         <hr />
