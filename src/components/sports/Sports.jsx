@@ -61,7 +61,7 @@ const Sports = () => {
     var req = new Request(url);
     fetch(req).then(response => {
       let data= response.json();
-      console.log(data)
+      console.log(data.news)
       setNews(data.news);
     })
        
