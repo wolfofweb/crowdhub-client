@@ -4,14 +4,15 @@ import { useEffect } from "react";
 import "./trending.scss";
 
 const Trending = () => {
-  let [news, setNews] = useState([]);
+ let [news, setNews] = useState([]);
   useEffect(() => {
     getData();
   }, []);
-let getData = async () => {
-    let res = await fetch('https://api.currentsapi.services/v1/latest-news?' +
-    'language=us&' +
-    'apiKey=sRm4uU7AOS5nIyJilHwoxsoKCkbbDRsfRMI2KZWLwqbjAVK0',{mode: 'no-cors'});
+
+  let getData = async () => {
+    let res = await fetch('https://api.currentsapi.services/v1/search?' +
+            'keywords=latest&language=en&' + 
+            'apiKey=sRm4uU7AOS5nIyJilHwoxsoKCkbbDRsfRMI2KZWLwqbjAVK0');
     let data = await res.json();
     console.log(data);
     setNews(data.news);
