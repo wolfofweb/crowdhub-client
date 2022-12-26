@@ -11,7 +11,7 @@ const Politics = () => {
 
   let getData = async () => {
     let res = await fetch('https://api.currentsapi.services/v1/search?' +
-            'keywords=trending&language=en&' + 
+            'keywords=entertainment&language=en&' + 
             'apiKey=sRm4uU7AOS5nIyJilHwoxsoKCkbbDRsfRMI2KZWLwqbjAVK0');
     let data = await res.json();
     console.log(data);
