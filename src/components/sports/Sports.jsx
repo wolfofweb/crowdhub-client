@@ -35,22 +35,26 @@ const Sports = () => {
 //     })
 
 //   }
-  let getData=()=>{
+  let getData=async()=>{
   const proxyUrl = "https://crowdhub.netlify.app/"
 const qInTitle = "sports";
 const apiKey = "a54a083a384e4e2fa8a09733da5a3c38";
 const url = `${proxyUrl}https://newsapi.org/v2/everything?qInTitle=${qInTitle}&sortBy=popularity?country=in&apiKey=${apiKey}`;
 const request = new Request(url);
 
-fetch(request)
-  .then(response => response.json())
-  .then((data) => {
+// fetch(request)
+//   .then(response => response.json())
+//   .then((data) => {
+//     console.log(data);
+//    setNews(data.articles);
+//   })
+//   .catch(error => {
+//     console.log(error);
+//   });
+     let res = await fetch(request);
+    let data = await res.json();
     console.log(data);
-   setNews(data.articles);
-  })
-  .catch(error => {
-    console.log(error);
-  });
+    setNews(data.articles);
   }
   
   
