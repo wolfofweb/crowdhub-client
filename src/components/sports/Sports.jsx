@@ -10,14 +10,14 @@ const Sports = () => {
   useEffect(() => {
     getData();
   }, []);
-//   let getData = async () => {
-//     let res = await fetch(
-//       `https://newsapi.org/v2/everything?q=sports&sortBy=popularity?country=in&apiKey=a54a083a384e4e2fa8a09733da5a3c38`
-//     );
-//     let data = await res.json();
-//     console.log(data);
-//     setNews(data.articles);
-//   };
+  let getData = async () => {
+    let res = await fetch('https://api.currentsapi.services/v1/search?' +
+            'keywords=sports&language=en&' + 
+            'apiKey=sRm4uU7AOS5nIyJilHwoxsoKCkbbDRsfRMI2KZWLwqbjAVK0');
+    let data = await res.json();
+    console.log(data);
+    setNews(data.news);
+  };
 //    let getData=()=>{
 //     return axios( `https://newsapi.org/v2/everything?q=sports&sortBy=popularity?country=in&apiKey=a54a083a384e4e2fa8a09733da5a3c38`, {
 //       method: 'GET',
@@ -35,7 +35,7 @@ const Sports = () => {
 //     })
 
 //   }
-  let getData=()=>{
+//   let getData=()=>{
 //   const proxyUrl = "https://crowdhub.netlify.app/"
 // const qInTitle = "sports";
 // const apiKey = "a54a083a384e4e2fa8a09733da5a3c38";
@@ -55,17 +55,17 @@ const Sports = () => {
 //     let data = await res.json();
 //     console.log(data);
 //     setNews(data.articles);
-     var url = 'https://api.currentsapi.services/v1/search?' +
-            'keywords=sports&language=en&' + 
-            'apiKey=sRm4uU7AOS5nIyJilHwoxsoKCkbbDRsfRMI2KZWLwqbjAVK0';
-    var req = new Request(url);
-    fetch(req).then(response => {
-      let data= response.json();
-      console.log(data)
-      setNews(data.news);
-    })
+//      var url = 'https://api.currentsapi.services/v1/search?' +
+//             'keywords=sports&language=en&' + 
+//             'apiKey=sRm4uU7AOS5nIyJilHwoxsoKCkbbDRsfRMI2KZWLwqbjAVK0';
+//     var req = new Request(url);
+//     fetch(req).then(response => {
+//       let data= response.json();
+//       console.log(data)
+//       setNews(data.news);
+//     })
        
-  }
+//   }
   
   
   return (
