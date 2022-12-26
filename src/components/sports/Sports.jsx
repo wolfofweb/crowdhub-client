@@ -23,7 +23,7 @@ const Sports = () => {
       method: 'GET',
       mode: 'no-cors',
       headers: {
-        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Origin': 'https://crowdhub.netlify.app',
         'Content-Type': 'application/json',
       },
       withCredentials: true,
