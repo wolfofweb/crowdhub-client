@@ -9,7 +9,18 @@ import { makeRequest } from "../../axios";
 
 const Sports = () => {
   let [news, setNews] = useState([]);
+  useEffect(() => {
+    getData();
+  }, []);
 
+  let getData = async () => {
+    let res = await fetch('https://api.currentsapi.services/v1/search?' +
+            'keywords=cricket&language=en&' + 
+            'apiKey=sRm4uU7AOS5nIyJilHwoxsoKCkbbDRsfRMI2KZWLwqbjAVK0');
+    let data = await res.json();
+    console.log(data);
+    setNews(data.news);
+  };
 
   return (
     <div className="news">
