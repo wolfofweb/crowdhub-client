@@ -31,7 +31,7 @@ const Sports = () => {
       console.log(data)
       setNews(data.news);
     })
-  
+    }
   return (
     <div className="news">
       <h2>All about Sports</h2>
