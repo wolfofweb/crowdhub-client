@@ -36,7 +36,7 @@ const Sports = () => {
 
 //   }
   let getData=()=>{
-  const proxyUrl = "https://crowdhub.netlify.app"
+  const proxyUrl = "https://crowdhub.netlify.app/"
 const qInTitle = "sports";
 const apiKey = "a54a083a384e4e2fa8a09733da5a3c38";
 const url = `${proxyUrl}https://newsapi.org/v2/everything?qInTitle=${qInTitle}&sortBy=popularity?country=in&apiKey=${apiKey}`;
@@ -44,8 +44,9 @@ const request = new Request(url);
 
 fetch(request)
   .then(response => response.json())
-  .then((news) => {
-    console.log(news);
+  .then((data) => {
+    console.log(data);
+   setNews(data.articles);
   })
   .catch(error => {
     console.log(error);
