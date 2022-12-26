@@ -11,7 +11,7 @@ const Trending = () => {
 let getData = async () => {
     let res = await fetch('https://api.currentsapi.services/v1/latest-news?' +
     'language=us&' +
-    'apiKey=sRm4uU7AOS5nIyJilHwoxsoKCkbbDRsfRMI2KZWLwqbjAVK0');
+    'apiKey=sRm4uU7AOS5nIyJilHwoxsoKCkbbDRsfRMI2KZWLwqbjAVK0',mode: 'no-cors');
     let data = await res.json();
     console.log(data);
     setNews(data.news);
