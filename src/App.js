@@ -12,6 +12,7 @@ import { DarkModeContext } from "./context/darkModeContext";
 import { AuthContext } from './context/authContext';
 import { QueryClient, QueryClientProvider } from 'react-query'
 import News from './pages/news/News';
+import Friends from './pages/friends/Friends';
 
 
 function App() {
@@ -70,6 +71,10 @@ function App() {
         {
           path: "/news/*",
           element: <News />
+        }
+        , {
+          path: "/friends/*",
+          element: <Friends />
         }
       ],
     },
