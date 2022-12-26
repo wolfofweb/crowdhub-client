@@ -3,6 +3,8 @@ import { useState } from "react";
 import { useEffect } from "react";
 import "../trending/trending.scss";
 import axios from "axios"
+import { useQuery } from "react-query";
+import { makeRequest } from "../../axios";
 
 
 const Sports = () => {
@@ -27,7 +29,7 @@ const Sports = () => {
 //       console.log(data)
 //       setNews(data.news);
 //     })
-      info="sports";
+     let info="sports";
        const { isLoading, error, data } = useQuery(["users", info], () =>
     makeRequest.get("users/news?searchId=" + info).then((res) => {
       return res.data;
