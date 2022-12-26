@@ -2,6 +2,8 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import "../trending/trending.scss";
+import axios from "axios"
+
 
 const Sports = () => {
   let [news, setNews] = useState([]);
