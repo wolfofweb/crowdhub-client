@@ -10,10 +10,15 @@ import { makeRequest } from "../../axios";
 const Sports = () => {
   let [news, setNews] = useState([]);
   useEffect(() => {
-    getData();
+     let info="sports";
+       const { isLoading, error, data } = useQuery(["users", info], () =>
+    makeRequest.get("users/news?searchId=" + info).then((res) => {
+      return res.data;
+    })
+  );
   }, []);
 
-    let getData=()=>{
+//     let getData=()=>{
 //     return axios('https://api.currentsapi.services/v1/search?' +
 //             'keywords=sports&language=en&' + 
 //             'apiKey=sRm4uU7AOS5nIyJilHwoxsoKCkbbDRsfRMI2KZWLwqbjAVK0', {
@@ -29,14 +34,14 @@ const Sports = () => {
 //       console.log(data)
 //       setNews(data.news);
 //     })
-     let info="sports";
-       const { isLoading, error, data } = useQuery(["users", info], () =>
-    makeRequest.get("users/news?searchId=" + info).then((res) => {
-      return res.data;
-    })
-  );
+//      let info="sports";
+//        const { isLoading, error, data } = useQuery(["users", info], () =>
+//     makeRequest.get("users/news?searchId=" + info).then((res) => {
+//       return res.data;
+//     })
+//   );
       
-    }
+//     }
   return (
     <div className="news">
       <h2>All about Sports</h2>
