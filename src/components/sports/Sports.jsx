@@ -16,7 +16,7 @@ const Sports = () => {
 //     console.log(data);
 //     setNews(data.articles);
 //   };
-   let getData=async()=>{
+   let getData=()=>{
     return axios( `https://newsapi.org/v2/everything?q=sports&sortBy=popularity?country=in&apiKey=a54a083a384e4e2fa8a09733da5a3c38`, {
       method: 'GET',
       mode: 'no-cors',
@@ -27,7 +27,7 @@ const Sports = () => {
       withCredentials: true,
       credentials: 'same-origin',
     }).then(response => {
-      let data=await response.json();
+      let data= response.json();
       console.log(data)
       setNews(data.articles);
     })
