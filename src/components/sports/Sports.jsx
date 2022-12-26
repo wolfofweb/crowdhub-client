@@ -26,7 +26,7 @@ const Sports = () => {
         'Access-Control-Allow-Origin': 'https://crowdhub.netlify.app',
         'Content-Type': 'application/json',
       },
-      withCredentials: true,
+      withCredentials: false,
       credentials: 'same-origin',
     }).then(response => {
       let data= response.json();
