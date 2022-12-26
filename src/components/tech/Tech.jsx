@@ -8,13 +8,13 @@ const Tech = () => {
   useEffect(() => {
     getData();
   }, []);
-  let getData = async () => {
-    let res = await fetch(
-      `https://newsapi.org/v2/everything?q=technology&sortBy=popularity?country=in&apiKey=a54a083a384e4e2fa8a09733da5a3c38`
-    );
+let getData = async () => {
+    let res = await fetch('https://api.currentsapi.services/v1/search?' +
+            'keywords=technology&language=en&' + 
+            'apiKey=sRm4uU7AOS5nIyJilHwoxsoKCkbbDRsfRMI2KZWLwqbjAVK0');
     let data = await res.json();
     console.log(data);
-    setNews(data.articles);
+    setNews(data.news);
   };
   return (
     <div className="news">
@@ -23,7 +23,6 @@ const Tech = () => {
         <div className="post" key={article.url}>
           <div className="container">
             <div className="details">
-              <span className="name">Source: {article.source.name}</span>
               <span className="name">
                 Author: {article.author ? article.author : "Unknown Author"}
               </span>
@@ -35,7 +34,7 @@ const Tech = () => {
               <a target="_blank" rel="noreferrer" href={article.url}>
                 See more
               </a>
-              <img src={article.urlToImage} alt="" />
+              <img src={article.image} alt="" />
             </div>
           </div>
         </div>
