@@ -24,7 +24,7 @@ const Sports = () => {
             'apiKey=sRm4uU7AOS5nIyJilHwoxsoKCkbbDRsfRMI2KZWLwqbjAVK0', {
       method: 'GET',
        headers: {
-        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Origin': 'https://crowdhub.netlify.app',
         'Content-Type': 'application/json',
       },
       mode: 'no-cors',
