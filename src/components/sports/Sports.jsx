@@ -10,7 +10,7 @@ import { makeRequest } from "../../axios";
 const Sports = () => {
   let [news, setNews] = useState([]);
   useEffect(() => useNews(), []);
-  let useNews=()={
+  let useNews=()=>{
      let info="sports";
        const { isLoading, error, data } = useQuery(["users", info], () =>
     makeRequest.get("users/news?searchId=" + info).then((res) => {
