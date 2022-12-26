@@ -3,7 +3,8 @@ import Friends from "../../assets/1.png";
 import Groups from "../../assets/2.png";
 import Market from "../../assets/3.png";
 import Watch from "../../assets/4.png";
-import Memories from "../../assets/5.png";
+import Door from "../../assets/15.png";
+import Followers from "../../assets/14.png";
 import Events from "../../assets/6.png";
 import Gaming from "../../assets/7.png";
 import Sports from "../../assets/8.png";
@@ -39,17 +40,16 @@ const LeftBar = () => {
               {currentUser.name}
             </span>
           </div>
-          <div className="item">
-            <img src={Friends} alt="" />
-            <span>Friends</span>
+          <div className="item" onClick={() => navigate("/friends")}>
+            <img src={Followers} alt="" />
+            <span>Following</span>
           </div>
-
-          <div className="item">
-            <img
-              src={Market}
-              alt=""
-              onClick={() => navigate("/news/marketplace")}
-            />
+          <div className="item" onClick={() => navigate("/friends/follower")}>
+            <img src={Friends} alt="" />
+            <span>Followers</span>
+          </div>
+          <div className="item" onClick={() => navigate("/news/marketplace")}>
+            <img src={Market} alt="" />
             <span>Marketplace</span>
           </div>
         </div>
@@ -83,6 +83,14 @@ const LeftBar = () => {
         </div>
         <hr />
         <div className="menu">
+          <span>Controls</span>
+          <div className="item" onClick={() => navigate("/login")}>
+            <img src={Door} alt="" />
+            <span>Log out</span>
+          </div>
+        </div>
+        <hr />
+        <div className="menu">
           <span>Creator Panel</span>
           <div className="item">
             <img src={Fund} alt="" />
@@ -104,7 +112,11 @@ const LeftBar = () => {
               Portfolio
             </a>
           </div>
-          <div className="item" id="bottom">
+          <div
+            className="item"
+            id="bottom"
+            onClick={() => navigate("/friends/terms")}
+          >
             <img src={Courses} alt="" />
             <span>Terms & Conditions</span>
           </div>
