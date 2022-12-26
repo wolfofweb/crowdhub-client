@@ -23,7 +23,6 @@ let getData = async () => {
         <div className="post" key={article.url}>
           <div className="container">
             <div className="details">
-              <span className="name">Source: {article.source.name}</span>
               <span className="name">
                 Author: {article.author ? article.author : "Unknown Author"}
               </span>
@@ -35,7 +34,7 @@ let getData = async () => {
               <a target="_blank" rel="noreferrer" href={article.url}>
                 See more
               </a>
-              <img src={article.urlToImage} alt="" />
+              <img src={article.image} alt="" />
             </div>
           </div>
         </div>
