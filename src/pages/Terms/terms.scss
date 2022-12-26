@@ -1,0 +1,25 @@
+@import "../../style.scss";
+.terms {
+  @include themify($themes) {
+    background-color: themed("bgSoft");
+    min-height: 100vh;
+    color: themed("textColor");
+    padding: 50px;
+    @include mobile {
+      padding: 20px;
+    }
+    @include mobile {
+      padding: 30px;
+    }
+    p {
+      font-size: 14px;
+      margin-top: 1rem;
+      text-align: justify;
+    }
+    h2 {
+      color: themed("logo");
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+    }
+  }
+}
