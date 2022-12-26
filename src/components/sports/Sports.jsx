@@ -18,42 +18,42 @@ const Sports = () => {
 //     console.log(data);
 //     setNews(data.news);
 //   };
-    let getData=async()=>{
-  const proxyUrl = "https://crowdhub.netlify.app/"
-const qInTitle = "sports";
-const apiKey = "sRm4uU7AOS5nIyJilHwoxsoKCkbbDRsfRMI2KZWLwqbjAVK0";
-const url = `${proxyUrl}https://api.currentsapi.services/v1/search?keywords=${qInTitle}&language=en&apiKey=${apiKey}`;
-const request = new Request(url);
-fetch(request)
-  .then(response =>{
-        console.log(response);
-        response.json()})
-  .then((data) => {
-    console.log(data);
-   setNews(data.news);
-  })
-  .catch(error => {
-    console.log(error);
-  });
+//     let getData=async()=>{
+//   const proxyUrl = "https://crowdhub.netlify.app/"
+// const qInTitle = "sports";
+// const apiKey = "sRm4uU7AOS5nIyJilHwoxsoKCkbbDRsfRMI2KZWLwqbjAVK0";
+// const url = `${proxyUrl}https://api.currentsapi.services/v1/search?keywords=${qInTitle}&language=en&apiKey=${apiKey}`;
+// const request = new Request(url);
+// fetch(request)
+//   .then(response =>{
+//         console.log(response);
+//         response.json()})
+//   .then((data) => {
+//     console.log(data);
+//    setNews(data.news);
+//   })
+//   .catch(error => {
+//     console.log(error);
+//   });
     }
-//     let getData=()=>{
-//     return axios('https://api.currentsapi.services/v1/search?' +
-//             'keywords=sports&language=en&' + 
-//             'apiKey=sRm4uU7AOS5nIyJilHwoxsoKCkbbDRsfRMI2KZWLwqbjAVK0', {
-//       method: 'GET',
-//        headers: {
-//         'Access-Control-Allow-Origin': 'https://crowdhub.netlify.app',
-//         'Content-Type': 'application/json',
-//       },
-//       mode: 'no-cors',
-//       withCredentials: true,
-//       credentials: 'same-origin',
-//     }).then(response => {
-//       let data= response.json();
-//       console.log(data)
-//       setNews(data.news);
-//     })
-//     }
+    let getData=()=>{
+    return axios('https://api.currentsapi.services/v1/search?' +
+            'keywords=sports&language=en&' + 
+            'apiKey=sRm4uU7AOS5nIyJilHwoxsoKCkbbDRsfRMI2KZWLwqbjAVK0', {
+      method: 'GET',
+       headers: {
+        'Access-Control-Allow-Origin': 'https://crowdhub.netlify.app',
+        'Content-Type': 'application/json',
+      },
+      mode: 'no-cors',
+      withCredentials: true,
+      credentials: 'same-origin',
+    }).then(response => {
+      let data= response.json();
+      console.log(data)
+      setNews(data.news);
+    })
+    }
   return (
     <div className="news">
       <h2>All about Sports</h2>
