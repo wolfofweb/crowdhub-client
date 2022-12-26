@@ -8,9 +8,10 @@ const Politics = () => {
   useEffect(() => {
     getData();
   }, []);
- let getData = async () => {
+
+  let getData = async () => {
     let res = await fetch('https://api.currentsapi.services/v1/search?' +
-            'keywords=entertainment&language=en&' + 
+            'keywords=trending&language=en&' + 
             'apiKey=sRm4uU7AOS5nIyJilHwoxsoKCkbbDRsfRMI2KZWLwqbjAVK0');
     let data = await res.json();
     console.log(data);
