@@ -13,6 +13,7 @@ import "@splidejs/react-splide/css/sea-green";
 import "@splidejs/react-splide/css/core";
 import { useNavigate } from "react-router-dom";
 import "./stories.scss";
+import LoadingSpin from "react-loading-spin";
 
 const Stories = () => {
   // const { currentUser } = useContext(AuthContext);
@@ -38,26 +39,44 @@ const Stories = () => {
           gap: "1.5rem",
         }}
       >
-        {isLoading
-          ? "Loading"
-          : data.map((story) => (
-              <SplideSlide
-                className="story"
-                key={story.id}
-                onClick={() => navigate(`profile/${story.id}`)}
-              >
-                <img
-                  src={"/upload/" + story.profilePic}
-                  alt=""
-                  onError={({ currentTarget }) => {
-                    currentTarget.onerror = null;
-                    currentTarget.src =
-                      "https://sp-ao.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_400,h_400/https://useqwitter.com/wp-content/uploads/2022/08/blank-twitter-icon.jpg";
-                  }}
-                />
-                <span>{story.name}</span>
-              </SplideSlide>
-            ))}
+        {isLoading ? (
+          <div
+            style={{
+              display: "grid",
+              margin: "auto",
+            }}
+          >
+            <LoadingSpin
+              duration="2s"
+              width="5px"
+              timingFunction="ease-in-out"
+              direction="alternate"
+              size="2rem"
+              primaryColor="#5271ff"
+              secondaryColor="transparent"
+              numberOfRotationsInAnimation={2}
+            />
+          </div>
+        ) : (
+          data.map((story) => (
+            <SplideSlide
+              className="story"
+              key={story.id}
+              onClick={() => navigate(`profile/${story.id}`)}
+            >
+              <img
+                src={"/upload/" + story.profilePic}
+                alt=""
+                onError={({ currentTarget }) => {
+                  currentTarget.onerror = null;
+                  currentTarget.src =
+                    "https://sp-ao.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_400,h_400/https://useqwitter.com/wp-content/uploads/2022/08/blank-twitter-icon.jpg";
+                }}
+              />
+              <span>{story.name}</span>
+            </SplideSlide>
+          ))
+        )}
       </Splide>
     </div>
   );
