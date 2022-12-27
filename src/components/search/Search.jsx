@@ -8,7 +8,7 @@ const Search = ({ setSearch, info }) => {
   // const { currentUser } = useContext(AuthContext);
 
   const { isLoading, error, data } = useQuery(["users", info], () =>
-    makeRequest.get("users/news?searchId=" + info).then((res) => {
+    makeRequest.get("users/search?searchId=" + info).then((res) => {
       return res.data;
     })
   );
