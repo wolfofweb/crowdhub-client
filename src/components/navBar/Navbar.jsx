@@ -6,10 +6,9 @@ import {
   BiWorld,
   BiSun,
   BiSearchAlt2,
-  BiBell,
+  BiShoppingBag,
 } from "react-icons/bi";
-// import { RiApps2Line } from "react-icons/ri";
-import { FiMail } from "react-icons/fi";
+import { RiLogoutBoxRLine } from "react-icons/ri";
 import { BsFillPersonFill } from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
@@ -79,8 +78,8 @@ const Navbar = () => {
         <BsFillPersonFill
           onClick={() => navigate(`/profile/${currentUser.id}`)}
         />
-        <FiMail />
-        <BiBell />
+        <BiShoppingBag onClick={() => navigate("/news/marketplace")} />
+        <RiLogoutBoxRLine onClick={() => navigate("/login")} />
         <div className="user">
           <img
             src={"/upload/" + currentUser.profilePic}
