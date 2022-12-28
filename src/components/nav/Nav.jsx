@@ -33,7 +33,7 @@ function Nav() {
           <div className="menu">
             <div className="user">
               <img
-                src={"/upload/" + currentUser.profilePic}
+                src={currentUser.profilePic}
                 alt=""
                 onClick={() => navigate(`/profile/${currentUser.id}`)}
                 onError={({ currentTarget }) => {
@@ -85,7 +85,7 @@ function Nav() {
             </div>
             <div className="item" onClick={() => navigate("/news/politics")}>
               <img src={Groups} alt="" />
-              <span>Politics</span>
+              <span>Entertainmen</span>
             </div>
           </div>
           <hr />

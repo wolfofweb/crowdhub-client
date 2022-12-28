@@ -82,7 +82,7 @@ const Navbar = () => {
         <RiLogoutBoxRLine onClick={() => navigate("/login")} />
         <div className="user">
           <img
-            src={"/upload/" + currentUser.profilePic}
+            src={currentUser.profilePic}
             alt=""
             onError={({ currentTarget }) => {
               currentTarget.onerror = null;

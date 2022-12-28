@@ -45,7 +45,7 @@ const RightBar = () => {
                 <div className="userInfo">
                   {/* {console.log(item)} */}
                   <img
-                    src={"/upload/" + item.profilePic}
+                    src={item.profilePic}
                     alt=""
                     onError={({ currentTarget }) => {
                       currentTarget.onerror = null;

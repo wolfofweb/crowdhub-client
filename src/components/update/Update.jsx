@@ -24,7 +24,7 @@ const Update = ({ setOpenUpdate, user }) => {
       const formData = new FormData();
       formData.append("file", file);
       const res = await makeRequest.post("/upload", formData);
-      return res.data;
+      return res.data.file;
     } catch (err) {
       console.log(err);
     }
@@ -70,11 +70,7 @@ const Update = ({ setOpenUpdate, user }) => {
               <span>Cover Picture</span>
               <div className="imgContainer">
                 <img
-                  src={
-                    cover
-                      ? URL.createObjectURL(cover)
-                      : "/upload/" + user.coverPic
-                  }
+                  src={cover ? URL.createObjectURL(cover) : user.coverPic}
                   alt=""
                 />
               </div>
@@ -89,11 +85,7 @@ const Update = ({ setOpenUpdate, user }) => {
               <span>Profile Picture</span>
               <div className="imgContainer">
                 <img
-                  src={
-                    profile
-                      ? URL.createObjectURL(profile)
-                      : "/upload/" + user.profilePic
-                  }
+                  src={profile ? URL.createObjectURL(profile) : user.profilePic}
                   alt=""
                 />
               </div>

@@ -65,7 +65,7 @@ const Stories = () => {
               onClick={() => navigate(`profile/${story.id}`)}
             >
               <img
-                src={"/upload/" + story.profilePic}
+                src={story.profilePic}
                 alt=""
                 onError={({ currentTarget }) => {
                   currentTarget.onerror = null;

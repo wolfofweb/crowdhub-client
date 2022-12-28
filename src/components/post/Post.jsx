@@ -78,7 +78,7 @@ const Post = ({ post }) => {
         <div className="user">
           <div className="userInfo">
             <img
-              src={"/upload/" + post.profilePic}
+              src={post.profilePic}
               alt=""
               onError={({ currentTarget }) => {
                 currentTarget.onerror = null;

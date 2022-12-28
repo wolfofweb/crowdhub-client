@@ -43,7 +43,7 @@ const Follower = () => {
         data.map((item) => (
           <div className="card">
             <img
-              src={"/upload/" + item.profilePic}
+              src={item.profilePic}
               alt={item.name}
               onError={({ currentTarget }) => {
                 currentTarget.onerror = null;

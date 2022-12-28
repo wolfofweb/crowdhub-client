@@ -27,7 +27,7 @@ const LeftBar = () => {
         <div className="menu">
           <div className="user">
             <img
-              src={"/upload/" + currentUser.profilePic}
+              src={currentUser.profilePic}
               alt=""
               onClick={() => navigate(`/profile/${currentUser.id}`)}
               onError={({ currentTarget }) => {

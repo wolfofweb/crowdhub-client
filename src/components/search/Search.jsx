@@ -25,7 +25,7 @@ const Search = ({ setSearch, info }) => {
           {data.map((profile) => (
             <div className="card">
               <img
-                src={"/upload/" + profile.profilePic}
+                src={profile.profilePic}
                 alt={profile.name}
                 onError={({ currentTarget }) => {
                   currentTarget.onerror = null;

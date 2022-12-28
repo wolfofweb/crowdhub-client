@@ -59,7 +59,7 @@ const Share = () => {
         <div className="top">
           <div className="left">
             <img
-              src={"/upload/" + currentUser.profilePic}
+              src={currentUser.profilePic}
               alt=""
               onError={({ currentTarget }) => {
                 currentTarget.onerror = null;
