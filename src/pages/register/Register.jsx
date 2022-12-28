@@ -1,8 +1,9 @@
 import "./register.scss";
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import axios from "axios";
 import { useEffect } from "react";
+import emailjs from "emailjs-com";
 
 const Register = () => {
   const [inputs, setInputs] = useState({
@@ -23,10 +24,24 @@ const Register = () => {
     setFormErrors(validate(inputs));
     setIsSubmit(true);
   };
-
+  const form = useRef();
   useEffect(() => {
     if (Object.keys(formErrors).length === 0 && isSubmit) {
       validated();
+      //For sending Email to the successfully registered new user
+      emailjs
+        .sendForm(
+          "service_qogt3wd",
+          "template_rzjlp6x",
+          form.current,
+          "5DFV5aSyhq-_hqpm_"
+        )
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     }
   }, [formErrors]);
 
@@ -57,7 +72,10 @@ const Register = () => {
 
   const validated = async () => {
     try {
-      await axios.post("https://crowdhub-api-production.up.railway.app/api/auth/register", inputs);
+      await axios.post(
+        "https://crowdhub-api-production.up.railway.app/api/auth/register",
+        inputs
+      );
       navigate("/login");
     } catch (err) {
       setErr(err.response.data);
@@ -84,7 +102,7 @@ const Register = () => {
         </div>
         <div className="right">
           <h1>Register</h1>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} ref={form}>
             <input
               type="text"
               placeholder="Username"
