@@ -16,6 +16,7 @@ import { useLocation } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../context/authContext";
 import Update from "../../components/update/Update";
+import LoadingSpin from "react-loading-spin";
 
 const Profile = () => {
   const [openUpdate, setOpenUpdate] = useState(false);
@@ -65,12 +66,28 @@ const Profile = () => {
   return (
     <div className="profile">
       {isLoading ? (
-        "Loading"
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <LoadingSpin
+            duration="2s"
+            width="5px"
+            timingFunction="ease-in-out"
+            direction="alternate"
+            size="2rem"
+            primaryColor="#5271ff"
+            secondaryColor="transparent"
+            numberOfRotationsInAnimation={2}
+          />
+        </div>
       ) : (
         <>
           <div className="images">
             <img
-              src={"/upload/" + data.coverPic}
+              src={data.coverPic}
               alt=""
               className="cover"
               onError={({ currentTarget }) => {
@@ -80,7 +97,7 @@ const Profile = () => {
               }}
             />
             <img
-              src={"/upload/" + data.profilePic}
+              src={data.profilePic}
               alt=""
               className="profilePic"
               onError={({ currentTarget }) => {
