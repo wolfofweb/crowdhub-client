@@ -13,6 +13,8 @@ export const AuthContextProvider = ({ children }) => {
         const res = await axios.post("https://crowdhub-api-production.up.railway.app/api/auth/login", inputs, { withCredentials: true })
         //Set the userdata state from login generated cookie data
         setCurrentUser(res.data)
+        console.log(res.data)
+        console.log(currentUser)
     };
 
     useEffect(() => {
