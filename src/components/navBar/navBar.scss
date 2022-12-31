@@ -167,16 +167,16 @@
           color: themed("textColor");
           padding: 10px;
         }
-        button {
+        .mobileClose {
           // color: themed("textColor");
-          background-color: transparent;
+          // background-color: transparent;
           height: 30px;
           width: 30px;
           // width: 100%;
           border: none;
-          svg {
-            color: themed("textColor");
-          }
+          // svg {
+          color: themed("textColor");
+          // }
         }
         @include mobile {
           display: block;
