@@ -53,7 +53,7 @@ const Navbar = () => {
             placeholder="Search..."
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
-            onKeyDown={handleKeyDown}
+            onKeyPress={handleKeyDown}
           />
         </div>
         {mobileSearch && (
