@@ -171,6 +171,9 @@
           color: themed("textColor");
           background-color: transparent;
           border: none;
+          svg {
+            color: themed("textColor");
+          }
         }
         @include mobile {
           display: block;
