@@ -175,6 +175,7 @@
         svg {
           color: themed("textColor");
           font-size: 1rem;
+          z-index: 9999;
           // height: 1.5em;
           // width: 1.5em;
         }
