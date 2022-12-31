@@ -167,13 +167,13 @@
           color: themed("textColor");
           padding: 10px;
         }
-        .mobileClose {
-          svg {
-            color: themed("textColor");
-            height: 1.5em;
-            width: 1.5em;
-          }
+
+        svg {
+          color: themed("textColor");
+          height: 1.5em;
+          width: 1.5em;
         }
+
         @include mobile {
           display: block;
         }
