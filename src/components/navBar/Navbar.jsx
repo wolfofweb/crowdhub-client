@@ -26,7 +26,7 @@ const Navbar = () => {
   const [mobileSearch, setMobileSearch] = useState(false);
 
   const handleKeyDown = (event) => {
-    if (event.keyCode == 13 || event.keyCode == 10) {
+    if (event.keyCode === 13 || event.keyCode === 10) {
       setSearch(true);
     }
   };
@@ -53,7 +53,7 @@ const Navbar = () => {
             placeholder="Search..."
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
-            onKeyPress={handleKeyDown}
+            onKeyDown={handleKeyDown}
           />
         </div>
         {mobileSearch && (
@@ -68,9 +68,9 @@ const Navbar = () => {
             <button
               className="mobileClose"
               type="submit"
-              onClick={() => setMobileSearch((prev) => !prev)}
+              onClick={() => setSearch(true)}
             >
-              X
+              <BiSearchAlt2 />
             </button>
           </div>
         )}
