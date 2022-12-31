@@ -26,7 +26,7 @@ const Navbar = () => {
   const [mobileSearch, setMobileSearch] = useState(false);
 
   const handleKeyDown = (event) => {
-    if (event.key === "Enter") {
+    if (event.keyCode === 13) {
       setSearch(true);
     }
   };
@@ -67,6 +67,7 @@ const Navbar = () => {
             />
             <button
               className="mobileClose"
+              type="submit"
               onClick={() => setMobileSearch((prev) => !prev)}
             >
               X
