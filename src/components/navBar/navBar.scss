@@ -167,18 +167,18 @@
           color: themed("textColor");
           padding: 10px;
         }
-        button {
-          background-color: transparent;
-          height: 30px;
-          width: 30px;
-          border: none;
-          svg {
-            color: themed("textColor");
-            font-size: 1rem;
-            // height: 1.5em;
-            // width: 1.5em;
-          }
+        // button {
+        //   background-color: transparent;
+        //   height: 30px;
+        //   width: 30px;
+        //   border: none;
+        svg {
+          color: themed("textColor");
+          font-size: 1rem;
+          // height: 1.5em;
+          // width: 1.5em;
         }
+        // }
 
         @include mobile {
           display: block;
