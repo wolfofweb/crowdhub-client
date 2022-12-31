@@ -26,7 +26,7 @@ const Navbar = () => {
   const [mobileSearch, setMobileSearch] = useState(false);
 
   const handleKeyDown = (event) => {
-    if (event.keyCode === 13) {
+    if (event.keyCode == 13 || event.keyCode == 10) {
       setSearch(true);
     }
   };
