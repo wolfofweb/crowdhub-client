@@ -14,7 +14,7 @@ const Posts = ({ userId }) => {
   return (
     <div className="posts">
       {error ? (
-        "Something went wrong!"
+        "Something went wrong!...Try logging in again"
       ) : isLoading ? (
         <div
           style={{

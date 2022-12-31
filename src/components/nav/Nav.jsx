@@ -85,7 +85,7 @@ function Nav() {
             </div>
             <div className="item" onClick={() => navigate("/news/politics")}>
               <img src={Groups} alt="" />
-              <span>Entertainmen</span>
+              <span>Entertainment</span>
             </div>
           </div>
           <hr />
