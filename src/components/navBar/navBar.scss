@@ -168,17 +168,11 @@
           padding: 10px;
         }
         .mobileClose {
-          // color: themed("textColor");
-          // background-color: transparent;
-          // height: 30px;
-          // width: 30px;
-          // width: 100%;
-          // border: none;
-          // svg {
-          color: themed("textColor");
-          height: 1.5em;
-          width: 1.5em;
-          // }
+          svg {
+            color: themed("textColor");
+            height: 1.5em;
+            width: 1.5em;
+          }
         }
         @include mobile {
           display: block;
